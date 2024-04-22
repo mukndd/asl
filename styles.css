@@ -92,3 +92,17 @@ footer {
   .nav-open .nav-menu {
     display: block;
   }  
+
+button {
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size:xx-large;
+  text-decoration: none;
+  margin-bottom: auto;
+  margin-top: auto;
+  background-color: #333333;
+}
+
+button.active {
+  color: green;
+}

@@ -1,0 +1,128 @@
+    <button onclick="location.href='index.html';" class = "active" id = "home"><i class="fas fa-home"></i></a>
+    <button onclick="location.href='logs.html';" id="logs"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='chat.html';" id="chat"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='premium.html';" id="premium"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='profile.html';" id="profile"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='settings.html';" id="settings"><i class="fas fa-star"></i></button>
+
+    <button onclick="location.href='index.html';" id = "home"><i class="fas fa-home"></i></a>
+    <button onclick="location.href='logs.html';" class = "active" id="logs"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='chat.html';" id="chat"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='premium.html';" id="premium"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='profile.html';" id="profile"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='settings.html';" id="settings"><i class="fas fa-star"></i></button>
+
+    <button onclick="location.href='index.html';" id = "home"><i class="fas fa-home"></i></a>
+    <button onclick="location.href='logs.html';" id="logs"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='chat.html';" class = "active" id="chat"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='premium.html';" id="premium"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='profile.html';" id="profile"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='settings.html';" id="settings"><i class="fas fa-star"></i></button>
+
+    <button onclick="location.href='index.html';" id = "home"><i class="fas fa-home"></i></a>
+    <button onclick="location.href='logs.html';" id="logs"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='chat.html';" id="chat"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='premium.html';" class = "active" id="premium"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='profile.html';" id="profile"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='settings.html';" id="settings"><i class="fas fa-star"></i></button>
+
+    <button onclick="location.href='index.html';" id = "home"><i class="fas fa-home"></i></a>
+    <button onclick="location.href='logs.html';" id="logs"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='chat.html';" id="chat"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='premium.html';" id="premium"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='profile.html';" class = "active" id="profile"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='settings.html';" id="settings"><i class="fas fa-star"></i></button>
+
+    <button onclick="location.href='index.html';" id = "home"><i class="fas fa-home"></i></a>
+    <button onclick="location.href='logs.html';" id="logs"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='chat.html';" id="chat"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='premium.html';" id="premium"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='profile.html';" id="profile"><i class="fas fa-star"></i></button>
+    <button onclick="location.href='settings.html';" class = "active" id="settings"><i class="fas fa-star"></i></button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
