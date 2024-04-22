@@ -18,14 +18,9 @@ def wait_till_loaded(newxp):
         )
     except Exception as e:
         print("Error:", e)
-# Set up ChromeDriver
-# Open the website
-# Find elements by their XPath, ID, class, etc., and interact with them
 # search_bar = driver.find_element(by=By.XPATH, value="/html/body/main/nav/a[2]/svg")
 # search_bar.send_keys("hello")
 # search_bar.send_keys(Keys.RETURN)
-
-# Click on buttons
 wait_till_loaded('//*[@id="logs"]')
 button1 = driver.find_element(by=By.XPATH, value='//*[@id="logs"]')
 button1.click()
@@ -49,8 +44,5 @@ time.sleep(2)
 wait_till_loaded('//*[@id="home"]')
 button1 = driver.find_element(by=By.XPATH, value='//*[@id="home"]')
 button1.click()
-# Add some waiting time to observe the actions
 time.sleep(2)
-
-# Close the browser window
 driver.quit()
