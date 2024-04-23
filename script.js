@@ -7,8 +7,9 @@ document.querySelector('.fa-bars').addEventListener('click', function() {
     main.classList.toggle('blur');
     footer.classList.toggle('blur');
   });
-// JavaScript to toggle navigation menu
-document.querySelector('.fa-bars').addEventListener('click', function() {
-    document.querySelector('nav').classList.toggle('nav-open');
-  });
-    
+function toggleSearch() {
+  const searchNavbar = document.querySelector('.search-navbar');
+  searchNavbar.classList.toggle('show');
+}
+
+  

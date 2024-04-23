@@ -106,3 +106,41 @@ button {
 button.active {
   color: green;
 }
+
+/* Search navbar styling */
+.search-navbar {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Initially hidden */
+  width: 300px;
+  height: 100vh;
+  background-color: #f2f2f2; /* Light grey */
+  transition: right 0.3s ease; /* Slide animation */
+  z-index: 3; /* Ensure it's above other content */
+}
+
+/* Magnifier styling */
+.magnifier {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.search-navbar input {
+  width: calc(100% - 40px); /* Adjust width of input */
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.search-navbar button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
