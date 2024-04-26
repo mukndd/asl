@@ -5,15 +5,20 @@ import os
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-chrome_driver_path = "C:\\Users\\omega\\OneDrive\\Desktop\\coding\\projects\\signez\\asl\\asl\\chromedriver.exe"  # Replace with your actual path
-driver = webdriver.Chrome(executable_path=chrome_driver_path)
+from selenium.webdriver.chrome.service import Service
+stats = input("Internet status (1 or 0): ")
+if stats == 1:
+    sleep_time = 1.5
+else:
+    sleep_time = 10
+s=Service('C:\\Users\\omega\\OneDrive\\Desktop\\coding\\projects\\signez\\asl\\asl\\chromedriver.exe')
+driver = webdriver.Chrome(service=s)
 driver.get("https://mgkagithub.github.io/asl/")
-time.sleep(10)
+time.sleep(sleep_time)
 os.system("cls")
 def wait_till_loaded(newxp):
     try:
-        # Define the condition to wait for (e.g., presence of a specific element)
-        WebDriverWait(driver, 10).until(
+        WebDriverWait(driver, sleep_time).until(
             EC.presence_of_element_located((By.XPATH,newxp))
         )
     except Exception as e:
