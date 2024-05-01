@@ -11,5 +11,11 @@ function toggleSearch() {
   const searchNavbar = document.querySelector('.search-navbar');
   searchNavbar.classList.toggle('show');
 }
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
 
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
   
