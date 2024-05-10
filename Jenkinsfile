@@ -2,7 +2,7 @@ pipeline {
 
 	agent any
 	tools{
-		jdk 'Java17'
+		jdk 'openJDK21'
 		maven 'M3'
 	}
 	environment{
