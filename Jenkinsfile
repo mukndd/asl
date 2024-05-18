@@ -10,7 +10,6 @@ pipeline {
         DOCKER_USER = "ashrithasdocker"
         IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
-        DOCKERHUB_CREDENTIALS = credentials('docker')
     }
 
     triggers {
@@ -54,12 +53,14 @@ pipeline {
                     echo "Building Docker image..."
                     echo "IMAGE_NAME: ${IMAGE_NAME}"
                     echo "IMAGE_TAG: ${IMAGE_TAG}"
-                    docker.withRegistry('', 'DOCKERHUB_CREDENTIALS') {
-                        def dockerImage = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
-                        echo "Pushing Docker image with tag ${IMAGE_TAG}..."
-                        dockerImage.push()
-                        echo "Pushing Docker image with tag latest..."
-                        dockerImage.push('latest')
+                    withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                        docker.withRegistry('', 'docker') {
+                            def dockerImage = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+                            echo "Pushing Docker image with tag ${IMAGE_TAG}..."
+                            dockerImage.push()
+                            echo "Pushing Docker image with tag latest..."
+                            dockerImage.push('latest')
+                        }
                     }
                 }
             }
