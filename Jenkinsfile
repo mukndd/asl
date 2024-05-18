@@ -12,7 +12,7 @@ pipeline {
 		DOCKER_PASS = 'docker'
 		IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
 		IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+		DOCKERHUB_CREDENTIALS=credentials('docker')
 	}
 
 
