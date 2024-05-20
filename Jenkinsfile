@@ -5,7 +5,7 @@ pipeline {
         maven 'M3'
     }
     environment {
-        APP_NAME = "ashritha"
+        APP_NAME = "asl"
         RELEASE = "1.0.0"
         DOCKER_USER = "ashrithasdocker"
         IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
