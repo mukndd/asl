@@ -10,9 +10,6 @@ pipeline {
         DOCKER_USER = "ashrithasdocker"
         IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
-        AWS_REGION = 'us-east-1' // Update this to your AWS region
-        EC2_INSTANCE = 'your-ec2-instance-id' // Update this to your EC2 instance ID
-        SSH_CREDENTIALS_ID = 'your-ssh-credentials-id' // Jenkins ID for SSH credentials
     }
 
     triggers {
@@ -32,17 +29,12 @@ pipeline {
                 echo "Checking out code from SCM..."
                 echo "Branch: main"
                 echo "Repo URL: https://github.com/mgkagithub/asl.git"
-                script {
-                    try {
-                        git branch: 'main', credentialsId: 'github', url: 'https://github.com/mgkagithub/asl.git'
-                    } catch (Exception e) {
-                        echo "Error checking out from SCM: ${e.message}"
-                        currentBuild.result = 'FAILURE'
-                        error("Stopping pipeline due to checkout failure.")
-                    }
-                }
+                steps{
+				git branch: 'main', credentialsId: 'github', url: 'https://github.com/mgkagithub/asl.git'
+			}					
+		}
+
             }
-        }
 
         stage("Build Application") {
             steps {
