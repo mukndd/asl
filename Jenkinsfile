@@ -46,33 +46,5 @@ pipeline {
                 sh "mvn test"
             }
         }
-
-        stage("Build and Push Docker Image") {
-            steps {
-                script {
-                    echo "Building Docker image..."
-                    echo "IMAGE_NAME: ${IMAGE_NAME}"
-                    echo "IMAGE_TAG: ${IMAGE_TAG}"
-                    withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                        docker.withRegistry('', 'docker') {
-                            def dockerImage = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
-                            echo "Pushing Docker image with tag ${IMAGE_TAG}..."
-                            dockerImage.push()
-                            echo "Pushing Docker image with tag latest..."
-                            dockerImage.push('latest')
-                        }
-                    }
-                }
-            }
-        }
-
-        stage("Docker Logout") {
-            steps {
-                echo "Logging out from Docker..."
-                script {
-                    sh 'docker logout'
-                }
-            }
-        }
     }
 }
