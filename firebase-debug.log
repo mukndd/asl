@@ -1,0 +1,109 @@
+[debug] [2024-05-27T17:20:31.905Z] ----------------------------------------------------------------------
+[debug] [2024-05-27T17:20:31.907Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\omega\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-05-27T17:20:31.908Z] CLI Version:   13.10.1
+[debug] [2024-05-27T17:20:31.908Z] Platform:      win32
+[debug] [2024-05-27T17:20:31.908Z] Node Version:  v20.10.0
+[debug] [2024-05-27T17:20:31.908Z] Time:          Mon May 27 2024 22:50:31 GMT+0530 (India Standard Time)
+[debug] [2024-05-27T17:20:31.908Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-27T17:20:31.916Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-27T17:20:31.916Z] > authorizing via signed-in user (omegarapid123456789@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\omega\OneDrive\Desktop\coding\projects\signez\asl\asl
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-05-27T17:21:22.043Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-05-27T17:21:22.862Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-05-27T17:21:22.863Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project elite-epoch-421017 (signez) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2024-05-27T17:21:24.339Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-05-27T17:21:24.339Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/elite-epoch-421017
+[debug] [2024-05-27T17:21:26.004Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com 200
+[debug] [2024-05-27T17:21:26.004Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com [omitted]
+[warn] !  database: missing required API firebasedatabase.googleapis.com. Enabling now... 
+[debug] [2024-05-27T17:21:26.004Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com:enable [none]
+[debug] [2024-05-27T17:21:26.004Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com:enable x-goog-quota-user=projects/elite-epoch-421017
+[debug] [2024-05-27T17:21:26.498Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com:enable 200
+[debug] [2024-05-27T17:21:26.498Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com:enable [omitted]
+[debug] [2024-05-27T17:21:36.501Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-05-27T17:21:36.502Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/elite-epoch-421017
+[debug] [2024-05-27T17:21:38.073Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com 200
+[debug] [2024-05-27T17:21:38.073Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2024-05-27T17:21:38.076Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/elite-epoch-421017 [none]
+[debug] [2024-05-27T17:21:38.579Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/elite-epoch-421017 200
+[debug] [2024-05-27T17:21:38.579Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/elite-epoch-421017 {"projectId":"elite-epoch-421017","projectNumber":"160983313241","displayName":"signez","name":"projects/elite-epoch-421017","resources":{"hostingSite":"elite-epoch-421017"},"state":"ACTIVE","etag":"1_ab39cf01-acf4-413a-9530-8dd6979ccad8"}
+[debug] [2024-05-27T17:21:50.131Z] >>> [apiv2][query] POST https://firebasedatabase.googleapis.com/v1beta/projects/elite-epoch-421017/locations/asia-southeast1/instances databaseId=elite-epoch-421017-default-rtdb&validateOnly=true
+[debug] [2024-05-27T17:21:50.131Z] >>> [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/elite-epoch-421017/locations/asia-southeast1/instances {"type":"default_database"}
+[debug] [2024-05-27T17:21:51.952Z] <<< [apiv2][status] POST https://firebasedatabase.googleapis.com/v1beta/projects/elite-epoch-421017/locations/asia-southeast1/instances 200
+[debug] [2024-05-27T17:21:51.952Z] <<< [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/elite-epoch-421017/locations/asia-southeast1/instances {"name":"projects/160983313241/locations/asia-southeast1/instances/elite-epoch-421017-default-rtdb","project":"projects/160983313241","databaseUrl":"https://elite-epoch-421017-default-rtdb.asia-southeast1.firebasedatabase.app","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[debug] [2024-05-27T17:21:51.953Z] >>> [apiv2][query] POST https://firebasedatabase.googleapis.com/v1beta/projects/elite-epoch-421017/locations/asia-southeast1/instances databaseId=elite-epoch-421017-default-rtdb
+[debug] [2024-05-27T17:21:51.953Z] >>> [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/elite-epoch-421017/locations/asia-southeast1/instances {"type":"default_database"}
+[debug] [2024-05-27T17:21:52.583Z] <<< [apiv2][status] POST https://firebasedatabase.googleapis.com/v1beta/projects/elite-epoch-421017/locations/asia-southeast1/instances 200
+[debug] [2024-05-27T17:21:52.584Z] <<< [apiv2][body] POST https://firebasedatabase.googleapis.com/v1beta/projects/elite-epoch-421017/locations/asia-southeast1/instances {"name":"projects/160983313241/locations/asia-southeast1/instances/elite-epoch-421017-default-rtdb","project":"projects/160983313241","databaseUrl":"https://elite-epoch-421017-default-rtdb.asia-southeast1.firebasedatabase.app","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2024-05-27T17:22:08.389Z] >>> [apiv2][query] GET https://elite-epoch-421017-default-rtdb.asia-southeast1.firebasedatabase.app/.settings/rules.json [none]
+[debug] [2024-05-27T17:22:10.077Z] <<< [apiv2][status] GET https://elite-epoch-421017-default-rtdb.asia-southeast1.firebasedatabase.app/.settings/rules.json 200
+[debug] [2024-05-27T17:22:10.078Z] <<< [apiv2][body] GET https://elite-epoch-421017-default-rtdb.asia-southeast1.firebasedatabase.app/.settings/rules.json [stream]
+[info] +  Database Rules for elite-epoch-421017-default-rtdb have been written to n. 
+[info] Future modifications to n will update Realtime Database Security Rules when you run
+[info] firebase deploy.
+[info] 
+=== Functions Setup
+[debug] [2024-05-27T17:22:10.081Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-27T17:22:10.081Z] > authorizing via signed-in user (omegarapid123456789@gmail.com)
+[debug] [2024-05-27T17:22:10.081Z] [iam] checking project elite-epoch-421017 for permissions ["firebase.projects.get"]
+[debug] [2024-05-27T17:22:10.082Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/elite-epoch-421017:testIamPermissions [none]
+[debug] [2024-05-27T17:22:10.082Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/elite-epoch-421017:testIamPermissions x-goog-quota-user=projects/elite-epoch-421017
+[debug] [2024-05-27T17:22:10.082Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/elite-epoch-421017:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-05-27T17:22:11.409Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/elite-epoch-421017:testIamPermissions 200
+[debug] [2024-05-27T17:22:11.409Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/elite-epoch-421017:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-05-27T17:22:11.409Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-05-27T17:22:11.409Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/elite-epoch-421017
+[debug] [2024-05-27T17:22:11.412Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-05-27T17:22:11.412Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/elite-epoch-421017
+[debug] [2024-05-27T17:22:12.970Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/cloudfunctions.googleapis.com 200
+[debug] [2024-05-27T17:22:12.970Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2024-05-27T17:22:12.984Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/runtimeconfig.googleapis.com 200
+[debug] [2024-05-27T17:22:12.985Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/elite-epoch-421017/services/runtimeconfig.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] i  Skipping write of functions/requirements.txt 
+[info] i  Skipping write of functions/.gitignore 
+[info] i  Skipping write of functions/main.py 
+[debug] [2024-05-27T17:22:37.010Z] Running command with virtualenv: command="C:\Users\omega\OneDrive\Desktop\coding\projects\signez\asl\asl\functions\venv\Scripts\activate.bat", args=["","&&","pip3","install","--upgrade","pip"]
+[debug] [2024-05-27T17:22:38.273Z] Error: spawn "C:\Users\omega\OneDrive\Desktop\coding\projects\signez\asl\asl\functions\venv\Scripts\activate.bat" ENOENT
+    at notFoundError (C:\Users\omega\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\omega\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\omega\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+[error] 
+[error] Error: An unexpected error has occurred.
