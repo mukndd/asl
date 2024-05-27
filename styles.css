@@ -10,7 +10,10 @@ body {
     background-color: #0b0b0b; /* White */
     padding: 20px;
   }
-  
+ .signez{
+  position: fixed;
+  padding-left: 3in;
+ }
   /* Main content styling */
   main {
     display: flex;
@@ -37,7 +40,7 @@ body {
     margin-top: auto;
   }
   
-  nav a.active {
+  .active {
     color: green;
   }
   
@@ -160,7 +163,9 @@ button.active {
 .sidenav a:hover {
   color: #f1f1f1;
 }
-
+.sidenav active {
+  color: green
+}
 .sidenav .closebtn {
   position: absolute;
   top: 0;
