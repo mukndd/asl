@@ -1,142 +1,99 @@
 /* General styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a; /* Black-ish grey */
-    color: white;
-  }
-  
-  /* Header styling */
-  header {
-    background-color: #0b0b0b; /* White */
-    padding: 20px;
-  }
- .signez{
-  position: fixed;
-  padding-left: 3in;
- }
-  /* Main content styling */
-  main {
-    display: flex;
-    flex-direction: row;
-    height: calc(100vh - 60px); /* Account for header height */
-  }
-  
-  /* Side navigation styling */
-  nav {
-    background-color: #333333; /* Dark grey */
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a; /* Black-ish grey */
+  color: white;
+  overflow-y: hidden;
 
-  }
-  nav a {
-    padding-top: 10px;
-    color: rgb(255, 255, 255);
-    font-size:x-large;
-    text-decoration: none;
-    margin-bottom: auto;
-    margin-top: auto;
-  }
-  
-  .active {
-    color: green;
-  }
-  
-  /* Center content styling */
-  .center-content {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .rectangle {
-    width: 70%;
-    height: 70%;
-    background-color: #333333; /* Dark grey */
-    border-radius: 20px;
-  }
-/* Footer styling */
-footer {
-    background-color: #000000; /* Dark grey */
-    color: white;
-    padding: 40px 0; /* Add padding to top and bottom */
-  }
-  
-  footer h3 {
-    color: white;
-  }
-  
-  footer p {
-    color: white;
-  }
-  
-  /* Responsive layout for footer */
-  @media (max-width: 768px) {
-    footer {
-      padding: 20px 0; /* Reduce padding for smaller screens */
-    }
-  }
-  .nav-menu {
-    display: none;
-  }
-  
-  /* Show navigation menu when nav-open class is added */
-  .nav-open .nav-menu {
-    display: block;
-  }  
-
-button {
-  border: none;
-  color: rgb(255, 255, 255);
-  font-size:xx-large;
-  text-decoration: none;
-  margin-bottom: auto;
-  margin-top: auto;
-  background-color: #333333;
 }
 
-button.active {
+/* Header styling */
+header {
+  padding: 20px;
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+}
+
+.signez {
+  padding-left: 95vh;
+}
+
+/* Main content styling */
+main {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 60px); /* Account for header height */
+}
+
+/* Side navigation styling */
+nav {
+  background-color: #333333; /* Dark grey */
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+nav a {
+  color: rgb(255, 255, 255);
+  font-size: x-large;
+  text-decoration: none;
+}
+
+.active {
   color: green;
 }
 
-/* Search navbar styling */
-.search-navbar {
-  position: fixed;
-  top: 0;
-  right: -300px; /* Initially hidden */
-  width: 300px;
-  height: 100vh;
-  background-color: #f2f2f2; /* Light grey */
-  transition: right 0.3s ease; /* Slide animation */
-  z-index: 3; /* Ensure it's above other content */
+/* Center content styling */
+.center-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Magnifier styling */
-.magnifier {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  cursor: pointer;
+.rectangle {
+  width: 70%;
+  height: 70%;
+  background-color: #333333; /* Dark grey */
+  border-radius: 20px;
 }
 
-.search-navbar input {
-  width: calc(100% - 40px); /* Adjust width of input */
-  padding: 10px;
-  border: none;
-  outline: none;
+/* Footer styling */
+footer {
+  background-color: #000000; /* Dark grey */
+  color: white;
+  padding: 40px 0; /* Add padding to top and bottom */
 }
 
-.search-navbar button {
-  width: 40px;
-  height: 40px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
+footer h3 {
+  color: white;
 }
+
+footer p {
+  color: white;
+}
+
+/* Responsive layout for footer */
+@media (max-width: 768px) {
+  footer {
+      padding: 20px 0; /* Reduce padding for smaller screens */
+  }
+}
+
+.nav-menu {
+  display: none;
+}
+
+/* Show navigation menu when nav-open class is added */
+.nav-open .nav-menu {
+  display: block;
+}
+
 .sidenav {
   height: 100%;
   width: 0;
@@ -147,25 +104,31 @@ button.active {
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 10vh;
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 10px 10px 50px 40px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
-  transition: 0.3s;
+  transition: 0.9s;
   text-align: left;
+}
+
+.header .openav {
+  padding-top: 0vh;
 }
 
 .sidenav a:hover {
   color: #f1f1f1;
 }
-.sidenav active {
-  color: green
+
+.sidenav a:active:hover {
+  color: green;
 }
+
 .sidenav .closebtn {
   position: absolute;
   top: 0;
@@ -175,7 +138,6 @@ button.active {
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav { padding-top: 15px; }
+  .sidenav a { font-size: 18px; }
 }
-
