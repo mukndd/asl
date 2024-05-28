@@ -7,11 +7,8 @@ pipeline {
     environment {
         APP_NAME = "ashritha"
         RELEASE = "1.0.0"
-        DOCKER_USER = "ashrithasdocker"
-        DOCKER_PASS = 'docker'
         IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
-        DOCKERHUB_CREDENTIALS = credentials('docker')
     }
     triggers {
         pollSCM('H/2 * * * *')
@@ -50,10 +47,13 @@ pipeline {
             steps {
                 script {
                     echo "Building and pushing Docker image..."
-                    docker.withRegistry('', 'docker') {
-                        def docker_image = docker.build("${IMAGE_NAME}")
-                        docker_image.push("${IMAGE_TAG}")
-                        docker_image.push('latest')
+                    withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                        def docker_image
+                        docker.withRegistry('', 'docker') {
+                            docker_image = docker.build("${DOCKER_USER}/${APP_NAME}")
+                            docker_image.push("${IMAGE_TAG}")
+                            docker_image.push('latest')
+                        }
                     }
                 }
             }
