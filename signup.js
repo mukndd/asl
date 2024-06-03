@@ -3,22 +3,12 @@ document.getElementById('signup-form').addEventListener('submit', function (even
   
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-  
-    fetch('/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ username, password })
-    })
-      .then(response => {
-        if (response.ok) {
-          alert('Sign-up successful!');
+    const conpassword = document.getElementById('confirm_password').value;
+    if(password==conpassword){
+
           window.location.href = 'login.html';
-        } else {
-          response.text().then(text => alert(text));
         }
-      })
-      .catch(error => console.error('Error:', error));
-  });
-  
+    else{
+      alert("Passwords arent matching")
+    }
+      });
