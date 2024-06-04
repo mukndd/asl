@@ -23,10 +23,10 @@ def wait_till_loaded(newxp):
         )
     except Exception as e:
         print("Error:", e)
-l1 = ''
-l2 = ''
-l3 = ''
-l4 = ''
+l1 = '//*[@id="signez"]'
+l2 = '//*[@id="logs"]'
+l3 = '//*[@id="premium"]'
+l4 = '//*[@id="settings"]'
 # search_bar = driver.find_element(by=By.XPATH, value="/html/body/main/nav/a[2]/svg")
 # search_bar.send_keys("hello")
 # search_bar.send_keys(Keys.RETURN)
