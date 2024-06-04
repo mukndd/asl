@@ -4,11 +4,11 @@ document.getElementById('rzp-button1').onclick = function (e) {
       .then(data => {
         var options = {
           "key": data.key, // Use the key fetched from the server
-          "amount": "50000", // Amount in paise (50000 paise = INR 500)
+          "amount": "500", // Amount in paise (50000 paise = INR 500)
           "currency": "INR",
-          "name": "Your Company Name",
-          "description": "Test Transaction",
-          "image": "https://example.com/your_logo", // Replace with your logo URL
+          "name": "SignEz",
+          "description": "",
+          "image": "", // Replace with your logo URL
           "handler": function (response){
               alert("Payment ID: " + response.razorpay_payment_id);
               console.log(response);
@@ -20,7 +20,7 @@ document.getElementById('rzp-button1').onclick = function (e) {
               "contact": "9999999999"
           },
           "notes": {
-              "address": "Razorpay Corporate Office"
+              "address": ""
           },
           "theme": {
               "color": "#3399cc"

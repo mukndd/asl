@@ -1,0 +1,23 @@
+[33m1bf1582[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33m1bf1582[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{1}: checkout: moving from mg to main
+[33m872e6f5[m[33m ([m[1;31morigin/mg[m[33m, [m[1;32mmg[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33m872e6f5[m[33m ([m[1;31morigin/mg[m[33m, [m[1;32mmg[m[33m)[m HEAD@{3}: commit: aight we got most shit done now
+[33m73f5e95[m HEAD@{4}: commit: login is doneeeee along with a simple nosql backend
+[33mf58d2bc[m HEAD@{5}: commit: massive update
+[33m2190178[m HEAD@{6}: checkout: moving from main to mg
+[33m2190178[m HEAD@{7}: pull --tags origin main: Fast-forward
+[33m815c899[m HEAD@{8}: pull --tags origin main: Fast-forward
+[33m03082de[m HEAD@{9}: commit: renamed temp file
+[33m78d8545[m HEAD@{10}: commit: kinda upgraded the tester
+[33mcc7c420[m HEAD@{11}: commit: removed z
+[33m47ebfdb[m HEAD@{12}: commit: correction update
+[33m3840bb0[m HEAD@{13}: commit: added a 'z' at the end
+[33md82b086[m HEAD@{14}: commit: removed comments to reduce lines
+[33m929603a[m HEAD@{15}: commit: updated depreciated functions to the newer ones
+[33mf34c1ea[m HEAD@{16}: commit: selenium testing is done and completed
+[33m314c497[m HEAD@{17}: commit: update for the automation
+[33m6304f69[m HEAD@{18}: commit: corrected updated
+[33m09916d5[m HEAD@{19}: commit: another massive update
+[33mb462457[m HEAD@{20}: pull --tags origin main: Fast-forward
+[33ma187a41[m HEAD@{21}: reset: moving to HEAD
+[33ma187a41[m HEAD@{22}: clone: from https://github.com/mgkagithub/asl.git
