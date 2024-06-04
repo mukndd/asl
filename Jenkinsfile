@@ -52,7 +52,8 @@ pipeline {
                     echo "Building Docker image..."
                     echo "IMAGE_NAME: ${IMAGE_NAME}"
                     echo "IMAGE_TAG: ${IMAGE_TAG}"
-                    withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: "${DOCKER_USER}", passwordVariable: "${DOCKER_PASS}") {
+                    withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: "${DOCKER_USER}", passwordVariable: "${DOCKER_PASS}"])
+                                     {
                         docker.withRegistry('', 'docker') {
                             def dockerImage = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
                             echo "Pushing Docker image with tag ${IMAGE_TAG}..."
@@ -61,7 +62,6 @@ pipeline {
                             dockerImage.push('latest')
                         }
                     }
-                }
             }
         }
         stage("Deploy to AWS EC2") {
