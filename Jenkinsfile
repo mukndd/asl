@@ -65,7 +65,6 @@ pipeline {
             }
         }
            
-        }
         stage("Deploy to AWS EC2") {
             steps {
                 script {
