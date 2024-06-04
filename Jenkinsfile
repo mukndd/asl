@@ -8,7 +8,6 @@ pipeline {
         APP_NAME = "ashritha"
         RELEASE = "1.0.0"
         DOCKERHUB_CREDENTIALS = 'docker' 
-        DOCKER_IMAGE="ashrithasdocker/signez:1.0.0"
         DOCKER_CREDENTIALS_ID = 'docker'
         DOCKER_REPO = 'ashrithasdocker/ashritha'
         DOCKER_TAG = '1.0.0-58'
