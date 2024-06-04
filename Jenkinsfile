@@ -7,7 +7,8 @@ pipeline {
     environment {
         APP_NAME = "ashritha"
         RELEASE = "1.0.0"
-        DOCKERHUB_CREDENTIALS = 'docker' // Add this to store the credentials ID
+        DOCKERHUB_CREDENTIALS = 'docker' 
+        DOCKER_IMAGE="ashrithasdocker/signez:1.0.0"
     }
     triggers {
         pollSCM('H/2 * * * *')
