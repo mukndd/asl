@@ -68,7 +68,6 @@ pipeline {
             steps {
                 script {
                     echo "Connecting to EC2 instance and deploying application..."
-                    sshagent(['your-ssh-credentials-id']) {
                         sh """
                         ssh -o StrictHostKeyChecking=no ec2-user@13.232.151.234 << EOF
                             docker pull ${IMAGE_NAME}:${IMAGE_TAG}
@@ -80,7 +79,6 @@ pipeline {
                     }
                 }
             }
-        }
         stage("Docker Logout") {
             steps {
                 echo "Logging out from Docker..."
