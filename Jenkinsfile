@@ -9,6 +9,8 @@ pipeline {
         RELEASE = "1.0.0"
         IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
+        JAVA_HOME = tool 'openJdk'
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
     }
     triggers {
         pollSCM('H/2 * * * *')
@@ -43,7 +45,7 @@ pipeline {
                 sh "mvn test"
             }
         }
-                stage("Build and Push Docker Image") {
+        stage("Build and Push Docker Image") {
             steps {
                 script {
                     echo "Building Docker image..."
@@ -53,7 +55,7 @@ pipeline {
                         docker.withRegistry('', 'docker') {
                             def dockerImage = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
                             echo "Pushing Docker image with tag ${IMAGE_TAG}..."
-                            dockerImage.push()
+                            dockerImage.push("${IMAGE_TAG}")
                             echo "Pushing Docker image with tag latest..."
                             dockerImage.push('latest')
                         }
@@ -61,7 +63,6 @@ pipeline {
                 }
             }
         }
-
         stage("Deploy to AWS EC2") {
             steps {
                 script {
@@ -79,7 +80,6 @@ pipeline {
                 }
             }
         }
-
         stage("Docker Logout") {
             steps {
                 echo "Logging out from Docker..."
@@ -89,26 +89,15 @@ pipeline {
             }
         }
     }
-    
-    post {
-        success {
-            echo 'Build and deployment successful!'
-        }
-        failure {
-            echo 'Build or deployment failed!'
-        }
-    }
-      
-    }
     post {
         always {
             echo 'Pipeline execution finished.'
         }
         success {
-            echo 'Pipeline completed successfully.'
+            echo 'Build and deployment successful!'
         }
         failure {
-            echo 'Pipeline failed.'
+            echo 'Build or deployment failed!'
         }
     }
 }
