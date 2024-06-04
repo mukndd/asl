@@ -7,10 +7,7 @@ pipeline {
     environment {
         APP_NAME = "ashritha"
         RELEASE = "1.0.0"
-        IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
-        IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
-        JAVA_HOME = tool 'openJdk'
-        PATH = "${JAVA_HOME}/bin:${env.PATH}"
+        DOCKERHUB_CREDENTIALS = 'dockerhub' // Add this to store the credentials ID
     }
     triggers {
         pollSCM('H/2 * * * *')
@@ -46,12 +43,16 @@ pipeline {
             }
         }
         stage("Build and Push Docker Image") {
+            environment {
+                IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
+                IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
+            }
             steps {
                 script {
                     echo "Building Docker image..."
                     echo "IMAGE_NAME: ${IMAGE_NAME}"
                     echo "IMAGE_TAG: ${IMAGE_TAG}"
-                    withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         docker.withRegistry('', 'docker') {
                             def dockerImage = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
                             echo "Pushing Docker image with tag ${IMAGE_TAG}..."
