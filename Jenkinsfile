@@ -7,7 +7,11 @@ pipeline {
     environment {
         APP_NAME = "ashritha"
         RELEASE = "1.0.0"
-        DOCKERHUB_CREDENTIALS = 'docker' // Add this to store the credentials ID
+        DOCKERHUB_CREDENTIALS = 'docker' 
+        DOCKER_CREDENTIALS_ID = 'docker'
+        DOCKER_REPO = 'ashrithasdocker/ashritha'
+        DOCKER_TAG = '1.0.0-58'
+        DOCKER_IMAGE = "${DOCKER_REPO}:${DOCKER_TAG}"
     }
     triggers {
         pollSCM('H/2 * * * *')
@@ -42,28 +46,24 @@ pipeline {
                 sh "mvn test"
             }
         }
-        stage("Build and Push Docker Image") {
-            environment {
-                IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
-                IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
-            }
+         stage('Build') {
             steps {
                 script {
-                    echo "Building Docker image..."
-                    echo "IMAGE_NAME: ${IMAGE_NAME}"
-                    echo "IMAGE_TAG: ${IMAGE_TAG}"
-                    withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                        docker.withRegistry('', 'docker') {
-                            def dockerImage = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
-                            echo "Pushing Docker image with tag ${IMAGE_TAG}..."
-                            dockerImage.push("${IMAGE_TAG}")
-                            echo "Pushing Docker image with tag latest..."
-                            dockerImage.push('latest')
-                        }
+                    docker.build(env.DOCKER_IMAGE)
+                }
+            }
+        }
+        
+        stage('Push') {
+            steps {
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', env.DOCKER_CREDENTIALS_ID) {
+                        docker.image(env.DOCKER_IMAGE).push()
                     }
                 }
             }
         }
+           
         stage("Deploy to AWS EC2") {
             steps {
                 script {
