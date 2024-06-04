@@ -43,6 +43,61 @@ pipeline {
                 sh "mvn test"
             }
         }
+                stage("Build and Push Docker Image") {
+            steps {
+                script {
+                    echo "Building Docker image..."
+                    echo "IMAGE_NAME: ${IMAGE_NAME}"
+                    echo "IMAGE_TAG: ${IMAGE_TAG}"
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                        docker.withRegistry('', 'docker') {
+                            def dockerImage = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+                            echo "Pushing Docker image with tag ${IMAGE_TAG}..."
+                            dockerImage.push()
+                            echo "Pushing Docker image with tag latest..."
+                            dockerImage.push('latest')
+                        }
+                    }
+                }
+            }
+        }
+
+        stage("Deploy to AWS EC2") {
+            steps {
+                script {
+                    echo "Connecting to EC2 instance and deploying application..."
+                    sshagent(['your-ssh-credentials-id']) {
+                        sh """
+                        ssh -o StrictHostKeyChecking=no ec2-user@13.232.151.234 << EOF
+                            docker pull ${IMAGE_NAME}:${IMAGE_TAG}
+                            docker stop ${APP_NAME} || true
+                            docker rm ${APP_NAME} || true
+                            docker run -d --name ${APP_NAME} -p 80:8080 ${IMAGE_NAME}:${IMAGE_TAG}
+                        EOF
+                        """
+                    }
+                }
+            }
+        }
+
+        stage("Docker Logout") {
+            steps {
+                echo "Logging out from Docker..."
+                script {
+                    sh 'docker logout'
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Build and deployment successful!'
+        }
+        failure {
+            echo 'Build or deployment failed!'
+        }
+    }
       
     }
     post {
