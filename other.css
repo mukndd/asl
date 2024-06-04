@@ -12,7 +12,16 @@ body,html{
     filter: blur(3px);
     background-color: black;
 }
-
+.paynow {
+    padding: 10px 20px;
+    background-color: #000; /* Adjust as needed */
+    border-radius: 25px;
+    border: 1px solid #fff;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+  }
 .background::before, .background::after {
     content: "";
     flex: 0 0 60%; /* Each image takes up half the width */
@@ -41,7 +50,6 @@ body,html{
     align-items: center;
     position: relative;
     z-index: 1;
-    color: #fff;
     text-align: center;
 }
 
@@ -64,14 +72,12 @@ input {
     border: none;
     border-radius: 5px;
     background-color: #333;
-    color: #fff;
     font-size: 16px;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus, input:hover {
     background-color: #444;
-    box-shadow: 0 0 10px #fff;
     outline: none;
 }
 
@@ -87,16 +93,17 @@ button {
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
-
+.headings {
+    align-self: left;
+}
 button:hover {
     background-color: #555;
-    box-shadow: 0 0 1px #fff;
+    box-shadow: 0 0 1px #757575;
 }
 
 .login-box {
     padding-top: 100vh;
     position: relative;
-    background: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -108,11 +115,9 @@ button:hover {
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 100vh;
     margin: 0;
     background-color: #1a1a1a; /* Match the background color */
-    color: white;
     background-image: url('asl-background.png'); /* Adjust to your actual image path */
     background-size: cover;
     background-position: center;
@@ -127,11 +132,10 @@ body {
   }
   
   .auth-box {
-    background-color: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: black;
+    color: rgb(255, 255, 255);
     max-width: 400px;
     width: 100%;
   }
@@ -142,7 +146,7 @@ body {
   }
   
   .auth-box .form-label {
-    color: black;
+    color: rgb(255, 255, 255);
   }
   
   .auth-box .form-control {
@@ -153,7 +157,7 @@ body {
   }
   
   .auth-box .btn-primary {
-    width: 100%;
+    width: 50%;
     margin-top: 1rem;
   }
   

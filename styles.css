@@ -3,22 +3,79 @@ body {
   font-family: Arial, sans-serif;
   background-color: #1a1a1a; /* Black-ish grey */
   color: white;
-  overflow-y: hidden;
-
 }
 
-/* Header styling */
-header {
-  padding: 20px;
-}
-
-.header-item {
+/* General Styles */
+.header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #1e1d1d00; /* Adjust as needed */
+  color: white;
 }
 
+/* SignEZ Button */
 .signez {
-  padding-left: 95vh;
+  margin-right: auto;
+  text-decoration: none;
+  color: white;
+  font-size: 40px; /* Adjust as needed */padding-left: 5vh;
+}
+.whatsapp{
+  width: 6vh;
+}
+.signez:hover {
+  color: #ccc; /* Adjust as needed */
+}
+
+/* Center Links */
+.center-links {
+  display: flex;
+  gap: 20px;
+  padding-right: 2vh;
+}
+
+/* Right Links */
+.right-links {
+  display: flex;
+  gap: 20px;
+  padding-left: 10vh;
+  padding-right: 2vh;
+  align-items: center;
+}
+.get-started {
+  padding: 10px 20px;
+  background-color: #000; /* Adjust as needed */
+  border-radius: 25px;
+  border: 1px solid #fff;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: center;
+}
+.paynow{
+  padding: 10px 20px;
+  background-color: #021988; /* Adjust as needed */
+  border-radius: 25px;
+  border: 1px solid #fff;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: center;
+}
+.get-started:hover {
+  background-color: #555; /* Adjust as needed */
+  color: #fff; /* Adjust as needed */
+}
+/* Individual Link Styles */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #ccc; /* Adjust as needed */
 }
 
 /* Main content styling */
@@ -57,8 +114,8 @@ nav a {
 }
 
 .rectangle {
-  width: 70%;
-  height: 70%;
+  width: 90%;
+  height: 90%;
   background-color: #333333; /* Dark grey */
   border-radius: 20px;
 }
