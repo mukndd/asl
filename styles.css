@@ -43,9 +43,25 @@ body {
   z-index: 5;
 }
 .premium {
-  align-items: center;
+  display: block;
+  width: 100%;
+  height: auto;
   padding: 5vh;
-  padding-left: 23vh;
+}
+.name-display {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-left: 5vh;
+}
+
+.d-none {
+  display: none;
+}
+
+#greeting {
+  font-weight: bold;
+  color: rgb(117, 155, 226);
 }
 
 .log-box {

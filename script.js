@@ -33,3 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
     logsContainer.appendChild(logBox);
   }
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const authButtons = document.getElementById('auth-buttons');
+  const userGreeting = document.getElementById('user-greeting');
+  const greeting = document.getElementById('greeting');
+
+  const loggedInUser = sessionStorage.getItem('loggedInUser');
+  if (loggedInUser) {
+      authButtons.classList.add('d-none');
+      userGreeting.classList.remove('d-none');
+      greeting.textContent = `Hey, ${loggedInUser}`;
+  } else {
+      authButtons.classList.remove('d-none');
+      userGreeting.classList.add('d-none');
+  }
+});

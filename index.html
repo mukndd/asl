@@ -17,15 +17,17 @@
       <div class="center-links header">
         <a href="index.html"><img class = "logo" src = "logo.png"></a>
         <h1 class = "signez" id="signez"><a href="index.html">SignEz</a></h1>
-        <a href=" https://wa.me/+8130032649">
-          <img class = whatsapp src="whatsapp.png" alt="whatsapp"></a>
+        <a href=" https://wa.me/+8130032649"><img class = whatsapp src="whatsapp.png" alt="whatsapp"></a>
             <a href="logs.html" id = "logs">Logs</a>
             <a href="premium.html" id = "premium">Premium</a>
             <a href="settings.html" id = "settings">Settings</a>
           
-      <div class="right-links">
+      <div class="right-links d-none" id="auth-buttons">
         <a href="login.html" class="login">Login</a>
         <a href="signup.html" class="get-started">Get Started</a>
+      </div>
+      <div class="name-display d-none" id="user-greeting">
+        <span id="greeting"></span>
       </div>
   </div>
 </header>
@@ -53,5 +55,22 @@
 <!-- Font Awesome JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 <script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const authButtons = document.getElementById('auth-buttons');
+      const userGreeting = document.getElementById('user-greeting');
+      const greeting = document.getElementById('greeting');
+
+      const loggedInUser = sessionStorage.getItem('loggedInUser');
+      if (loggedInUser) {
+          authButtons.classList.add('d-none');
+          userGreeting.classList.remove('d-none');
+          greeting.textContent = `${loggedInUser}`;
+      } else {
+          authButtons.classList.remove('d-none');
+          userGreeting.classList.add('d-none');
+      }
+  });
+  </script>
 </body>
 </html>

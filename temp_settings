@@ -17,16 +17,18 @@
         <div class="center-links header">
           <a href="index.html"><img class = "logo" src = "logo.png"></a>
           <h1 class = "signez" id="signez"><a href="index.html">SignEz</a></h1>
-          <div class="right-links">
-            <a href="#" id="rzp-button1" class="paynow">Pay Now</a>
-          </div>
+  
     </div>
   </header>
-
 <main>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="payment.js"></script>
-    <img src = "premium.png" class = "premium">
+   
+</div>
+
+  <div class="center-content">
+    <!-- <div class="magnifier" onclick="toggleSearch()"><i class="fas fa-search"></i></div> -->
+  </div>
+  </div>
+  <div class = "premium image-container"><img src="cogs.png"></div>
 </main>
 <!-- <nav class="search-navbar">
   <input type="text" placeholder="Search...">

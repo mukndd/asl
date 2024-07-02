@@ -1,0 +1,100 @@
+body {
+    background-color: #1c1c1c;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+}
+
+.signez a {
+    color: white;
+    text-decoration: none;
+}
+
+.settings-container {
+    margin-top: 20px;
+}
+
+.settings-item {
+    background: #2a2a2a;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.name-display {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-left: 5vh;
+  }
+  
+  .d-none {
+    display: none;
+  }
+  
+  #greeting {
+    font-weight: bold;
+    color: rgb(117, 155, 226);
+  }
+.settings-item h3 {
+    margin-bottom: 10px;
+}
+
+.settings-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.logo{
+  width: 8vh;
+  height: 7vh;
+}
+.settings-item ul li {
+    margin-bottom: 10px;
+}
+
+.settings-item ul li a {
+    color: #1e90ff;
+}
+
+#user-greeting {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #1e1d1d00; /* Adjust as needed */
+    color: white;
+  }
+  
+  /* SignEZ Button */
+  .signez {
+    margin-right: auto;
+    text-decoration: none;
+    color: white;
+    font-size: 40px; /* Adjust as needed */padding-left: 0.5vh;
+    padding-top: 0.5vh;
+  }
