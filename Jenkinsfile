@@ -64,21 +64,6 @@ pipeline {
             }
         }
            
-        stage("Deploy to AWS EC2") {
-            steps {
-                script {
-                    echo "Connecting to EC2 instance and deploying application..."
-                        sh """
-                        ssh -o StrictHostKeyChecking=no ec2-user@13.232.151.234 << EOF
-                            docker pull ${IMAGE_NAME}:${IMAGE_TAG}
-                            docker stop ${APP_NAME} || true
-                            docker rm ${APP_NAME} || true
-                            docker run -d --name ${APP_NAME} -p 80:8080 ${IMAGE_NAME}:${IMAGE_TAG}
-                        EOF
-                        """
-                    }
-                }
-            }
         stage("Docker Logout") {
             steps {
                 echo "Logging out from Docker..."
